@@ -17,8 +17,7 @@ jobs:
 
     - name: Init new repo in wwwroot and commit generated files
       run: |
-        cd src/.vuepress
-        cp dist ./
+        cp ./src/.vuepress/dist ./
         cd dist
         git init
         git add -A
