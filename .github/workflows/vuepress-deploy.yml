@@ -14,5 +14,5 @@ jobs:
         TARGET_REPO: masiur/fluent-crm-developers-docs
         TARGET_BRANCH: master
         BUILD_SCRIPT: npm install && npm run build
-        BUILD_DIR: src/
+        BUILD_DIR: /
         CNAME: https://devdocs.masiursiddiki.com
