@@ -5,14 +5,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        TARGET_REPO: masiur/fluent-crm-developers-docs
-        TARGET_BRANCH: master
-        BUILD_SCRIPT: npm install && npm run build
-        BUILD_DIR: /src/.vuepress/dist
-        CNAME: https://devdocs.masiursiddiki.com
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Install dependencies and build
+      run: |
+        npm install
+        npm run build
+        cp -R /src/.vuepress/dist ./docs
+        cp -R /src/.vuepress/dist /.dist
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        publish_dir: ./docs
+
+    - name: Deploy to Custom Directory
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        publish_dir: /.dist
