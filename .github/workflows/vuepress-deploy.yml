@@ -16,8 +16,8 @@ jobs:
       run: |
         npm install
         npm run build
-        cp -R /src/.vuepress/dist ./docs
-        cp -R /src/.vuepress/dist /.dist
+        cp -R src/.vuepress/dist ./docs
+        cp -R src/.vuepress/dist /dist
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
