@@ -20,6 +20,7 @@
     "vuepress-plugin-seo": "^0.2.0"
   },
   "dependencies": {
+    "@docsearch/js": "^3.3.2",
     "markdown-it-include": "^2.0.0"
   }
 }
