@@ -1,3 +1,7 @@
+---
+description: "FluentCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. Manage your leads and customers, email campaigns, automated email sequencing, learner and affiliate management, and monitor user activities and many more in one place; without ever having to leave your WordPress dashboard!"
+---
+
 # What is FluentCRM?
 
 <Badge type="tip" vertical="top" text="FluentCRM Core" /> <Badge type="warning" vertical="top" text="Basic" />
@@ -20,7 +24,7 @@ FluentCRM comes in different versions:
 │   └── Functions   # contains global functions
 │   └── Hooks       # actions and filters handlers
 │   └── Http        # REST API routes, controllers, policies
-│   └── Models      # Database Molders
+│   └── Models      # Database Models
 │   └── Services    # Module Services
 │   └── views       # php view files
 │   └── App.php

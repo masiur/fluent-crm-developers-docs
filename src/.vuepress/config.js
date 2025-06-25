@@ -133,6 +133,10 @@ module.exports = {
                     {
                         text: 'Extending REST API',
                         link: '/extending-rest-api/',
+                    },
+                    {
+                        text: 'Event Tracking',
+                        link: '/modules/event-tracking/',
                     }
                 ],
             },
@@ -181,7 +185,7 @@ module.exports = {
         [
             '@vuepress/pwa',
             {
-                serviceWorker: true,
+                serviceWorker: false,
                 updatePopup: {
                     message: 'New content is available.',
                     buttonText: 'Refresh'

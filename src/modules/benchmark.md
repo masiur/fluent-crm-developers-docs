@@ -1,3 +1,7 @@
+---
+description: "Benchmark is a goal or target that you want to reach. For example, when a user clicks on a link in your email then it can be a benchmark."
+---
+
 # Benchmark
 
 Benchmark is a goal or target that you want to reach. For example, when a user clicks on a link in your email then it can be a benchmark.
@@ -21,7 +25,7 @@ class CourseEnrolledBenchmark extends BaseBenchmark {
         
     public function __construct()
     {
-        $this->triggerName = 'course_enrolled_benchmark';
+        $this->triggerName = 'your_own_action_trigger_name'; // Change this with your action trigger that you are targeting
         $this->actionArgNum = 2;
         $this->priority = 20;
         parent::__construct();
@@ -61,7 +65,7 @@ define `getDefaultSettings` method. This method returns the default settings of 
 
 Now, you need to define `getBlockFields` method which returns the settings of the benchmark.
 ```php
-    public function getBlockFields()
+    public function getBlockFields($funnel)
     {
         $yourCustomTags = [
             [
@@ -160,7 +164,7 @@ class CourseEnrolledBenchmark extends BaseBenchmark {
         
     public function __construct()
     {
-        $this->triggerName = 'course_enrolled_benchmark';
+        $this->triggerName = 'your_own_action_trigger_name';
         $this->actionArgNum = 2;
         $this->priority = 20;
         parent::__construct();
@@ -191,7 +195,7 @@ class CourseEnrolledBenchmark extends BaseBenchmark {
         ];
     }
     
-    public function getBlockFields()
+    public function getBlockFields($funnel)
     {
         $yourCustomTags = [
             [
@@ -274,9 +278,9 @@ class CourseEnrolledBenchmark extends BaseBenchmark {
 ### Registering the Benchmark
 Your benchmark is ready to use. Now, you need to register it with FluentCRM.
 ```php
-add_action('fluentcrm_loaded', function () {
+add_action('fluentcrm_addons_loaded', function () {
     new Your\Plugin\Name\Automation\CourseEnrolledBenchmark();
-});
+},99);
 ```
 
 

@@ -1,3 +1,7 @@
+---
+description: "An action is a precise task that is carried out when a specific trigger occurs. In the context of an application, an action is a programmed response to an event or user interaction."
+---
+
 #  Action
 An action is a precise task that is carried out when a specific trigger occurs.
 In the context of an application, an action is a programmed response to an event or user interaction.
@@ -197,7 +201,7 @@ class ApplyCustomTagAction extends BaseAction {
 All set! Your trigger is ready to use.
 Call the class to register the workflow.
 ```php
-add_action('fluentcrm_loaded', function () {
+add_action('fluent_crm/after_init', function () {
     new Your\Plugin\Name\Automation\AddToGroupAction();
 });
 ```

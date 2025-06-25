@@ -1,3 +1,7 @@
+---
+description: "List API Function provides many utility methods that you can use to get data as your requirement from your custom PHP Snippet or a custom plugin."
+---
+
 # List API Function
 
 List API Function provides many utility methods that you can use to get data as your requirement from your custom PHP Snippet or a custom plugin.
@@ -20,11 +24,13 @@ Each list should be an array of key-value pairs. The following keys are required
 $lists = [
            [
               'title' => 'List 1',
-              'slug'  => 'list-1'
+              'slug'  => 'list-1',
+              'description' => 'optional description'
            ],
            [
                'title' => 'List 2',
-               'slug'  => 'list-2'
+               'slug'  => 'list-2',
+               'description' => 'optional description'
            ]
       ];
 * @return: array of List Objects

@@ -1,3 +1,7 @@
+---
+description: "An event or action that initiates a specific automated response, that is what we call a trigger."
+---
+
 # Trigger
 An event or action that initiates a specific automated response, that is what we call a trigger.
 For example, when a user subscribes to a newsletter, this action is considered a trigger.
@@ -362,7 +366,7 @@ class CourseEnrolledTrigger extends BaseTrigger {
 All set! Your trigger is ready to use.
 Call the class to register the workflow.
 ```php
-add_action('fluentcrm_loaded', function () {
+add_action('fluent_crm/after_init', function () {
     new Your\Plugin\Name\Automation\CourseEnrolledTrigger();
 });
 ```
